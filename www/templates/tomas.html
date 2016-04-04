@@ -1,0 +1,52 @@
+
+
+
+<ion-view title="Tomas" ng-init="initTomas()">
+	<ion-content>
+
+
+
+    <div class="card">
+
+   <!--
+       <ion-list>
+         <ion-item class="item-remove-animate item-icon-right" ng-repeat="toma in tomas" >
+                <h2>{{toma.id}}</h2>
+								<h2>{{toma.med_name }}</h2>
+								<h2>{{toma.date | toDiaNum}}</h2>
+								<h2>{{toma.date | toHour}}</h2>
+
+						    <div> Dia {{toma}} </div>
+            <i class="icon ion-chevron-right icon accesory"></i>
+
+         </ion-item>
+       </ion-list>
+   -->
+
+			 <ion-list>
+				<div ng-repeat="toma in tomas | groupByMonthYear" divider-collection-repeat>
+
+
+				  <div class="item item-divider" ng-show="toma.sep" > {{toma.sep}} </div>
+
+			    <ion-item ng-hide="item.isDivider" class="item" href="#/toma/{{toma.id}}">
+
+						<h2>{{toma.med_name}}</h2>
+						<h2>{{toma.date | toDiaNum}}</h2>
+						<h2>{{toma.date | toHour}}</h2>
+						<h2>{{toma.tomada}}</h2>
+
+            <i class="icon ion-record assertive" ng-show="toma.tomada == 0"> </i>
+						<i class="icon ion-checkmark-circled balanced" ng-show="toma.tomada == 1"> </i>
+
+					  <i class="icon ion-chevron-right icon accesory"></i>
+			    </ion-item>
+
+
+				</div>
+		</ion-list>
+
+		 </div>
+
+    </ion-content>
+</ion-view>

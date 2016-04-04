@@ -1,0 +1,71 @@
+
+
+<div class="list">
+   <label class="item item-input">
+      <span class="input-label">Nombre</span>
+      <input type="text" name="name" ng-model="$parent.user.name" placeholder="Name" required>
+  </label>
+  <div class="error-container last-error-container" ng-show="formMed.name.$error && formMed.$submitted" ng-messages="formMed.name.$error">
+        <div ng-message="required">Indica el medicamento</div>
+  </div>
+
+  <label class="item item-input">
+      <span class="input-label">Días</span>
+      <input type="text" name="days" ng-readonly="true" ng-model="$parent.user.days" ng-click="openDaysForm($parent.user)" required>
+      <button class="button icon-left ion-chevron-right button-clear button-dark" ng-click="openDaysForm($parent.user)"> </button>
+      <input type="hidden" ng-model="$parent.user.dayscodes">
+  </label>
+  <div class="error-container last-error-container" ng-show="formMed.days.$error && formMed.$submitted" ng-messages="formMed.days.$error">
+        <div ng-message="required">Indica los días de las tomas</div>
+  </div>
+
+
+  <label class="item item-input">
+      <span class="input-label">Horas</span>
+      <input type="text" name="hours" ng-readonly="true" ng-model="$parent.user.hours" ng-click="openHoursForm($parent.user.hours)" required>
+      <button class="button icon-left ion-chevron-right button-clear button-dark" ng-click="openHoursForm($parent.user.hours)"> </button>
+  </label>
+  <div class="error-container last-error-container" ng-show="formMed.hours.$error && formMed.$submitted" ng-messages="formMed.hours.$error">
+        <div ng-message="required">Indica las horas de las tomas </div>
+  </div>
+
+
+  <label class="item item-input">
+    <span class="input-label">Fecha inicio</span>
+    <input type="date" id="date_ini" name="date_ini" ng-model="$parent.user.date_ini" required> </input>
+  </label>
+  <div class="error-container last-error-container" ng-show="formMed.date_ini.$error && formMed.$submitted" ng-messages="formMed.date_ini.$error">
+        <div ng-message="required">Indica la fecha de inicio de tratamiento</div>
+  </div>
+
+
+  <label class="item item-input">
+    <span class="input-label">Fecha fin</span>
+    <input type="date" id="date_end" name="date_end" ng-model="$parent.user.date_end" required> </input>
+  </label>
+  <div class="error-container last-error-container" ng-show="formMed.date_end.$error && formMed.$submitted" ng-messages="formMed.date_end.$error">
+        <div ng-message="required">Indica la fecha de finalización de tratamiento</div>
+  </div>
+
+
+  <li class="item item-toggle">
+     Alarma
+     <label class="toggle toggle-positive">
+       <input type="checkbox" id="alarma" name="alarma" ng-model="$parent.user.alarm">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+
+
+    <!--
+    <p> test {{$parent.datetest | date:'dd-MM-yyyy'}} </p>
+    -->
+
+
+
+
+
+  </label>
+</div>

@@ -1,0 +1,27 @@
+<ion-modal-view ng-init="initDays()">
+  <ion-header-bar align-title="left" class="bar-positive">
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeDaysForm()">Cerrar</button>
+    </div>
+  </ion-header-bar>
+	<ion-content>
+
+       <h2>Dias {{user.name}} {{user.days}}</h2>
+
+        <ion-list>
+          <ion-checkbox ng-model="days.l" >Lunes</ion-checkbox>
+          <ion-checkbox ng-model="days.m">Martes</ion-checkbox>
+          <ion-checkbox ng-model="days.x">Miércoles</ion-checkbox>
+          <ion-checkbox ng-model="days.j">Jueves</ion-checkbox>
+          <ion-checkbox ng-model="days.v">Viernes</ion-checkbox>
+          <ion-checkbox ng-model="days.s">Sabado</ion-checkbox>
+          <ion-checkbox ng-model="days.d">Domingo</ion-checkbox>
+
+          <button class="button button-calm button-block" ng-click="setDays(days)">
+            Ok
+          </button>
+
+        </ion-list>
+
+  </ion-content>
+</ion-modal-view>

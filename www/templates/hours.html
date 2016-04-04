@@ -1,0 +1,27 @@
+<ion-modal-view ng-init="initHours()">
+	<ion-content>
+
+		<ion-header-bar align-title="left" class="bar-positive">
+	    <div class="buttons">
+	      <button class="button button-clear" ng-click="closeHoursForm()">Cerrar</button>
+	    </div>
+	  </ion-header-bar>
+		<ion-content>
+
+			<h2>Horas {{user.hours} </h2>
+
+       <button class="button button-calm button-block" ng-click="addHour()">
+          Nueva hora
+       </button>
+
+       <ion-list>
+         <ion-item class="item-remove-animate item-icon-right" ng-repeat="hour in user.hours" ng-click="newHour()">
+            <h2>{{hour}}</h2>
+
+
+         </ion-item>
+       </ion-list>
+
+
+    </ion-content>
+</ion-modal-view>

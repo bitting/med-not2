@@ -1,0 +1,27 @@
+
+
+
+<ion-view title="Toma" ng-init="initToma()">
+	<ion-content>
+
+    <div class="card">
+       <ion-item ng-hide="item.isDivider" class="item">
+						<h2>{{toma.med_name}}</h2>
+						<h2>{{toma.date | toDiaNum}}</h2>
+						<h2>{{toma.date | toHour}}</h2>
+						<h2>{{toma.tomada}}</h2>
+						<i class="icon ion-record assertive" ng-show="toma.tomada == 0"> </i>
+						<i class="icon ion-checkmark-circled balanced" ng-show="toma.tomada == 1"> </i>
+				</ion-item>
+
+			</div>
+
+			<button class="button button-calm button-block" ng-click="tomada(toma.id)">
+				 Marcar como tomada
+			</button>
+
+
+		 </div>
+
+    </ion-content>
+</ion-view>
